@@ -85,8 +85,9 @@ class _MyCartState extends State<MyCart> {
       listStock[listStock.indexOf(resultStock)] = resultStock;
       cartStockMap[resultStock] = (cartStockMap[resultStock] ?? 0) + 1;
       cartStockList.add(stock);
-      setState(() {});
+      loadData();
     }
+    setState(() {});
   }
 
   void decrement(Stock stock) {
@@ -99,6 +100,7 @@ class _MyCartState extends State<MyCart> {
       listStock[listStock.indexOf(resultStock)] = resultStock;
       cartStockMap[resultStock] = (cartStockMap[resultStock] ?? 0) - 1;
       cartStockList.remove(stock);
+      loadData();
     }
     setState(() {});
   }
